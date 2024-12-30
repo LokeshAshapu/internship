@@ -1,5 +1,6 @@
 import os
 import json
+from PIL import Image
 import csv
 import pandas as pd
 import numpy as np
@@ -14,6 +15,10 @@ from sklearn.linear_model import LogisticRegression
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
+# Open a file to read from it
+#this is not possible in my system
+#with open('res.json', 'r') as file:
+#        file_content = file.read()
 
 intents= [
         {"tag": "greeting",
@@ -137,7 +142,12 @@ X = vectorizer.fit_transform(patterns)
 model = LogisticRegression()
 model.fit(X, tags)
 
+image = Image.open('res.png')
 
+# Resize the image
+resized_image = image.resize((300, 200))
+# Display an image
+st.image(resized_image)
 st.title("Restaurant Chatbot")
 st.write("Welcome to the chatbot. Please type a message and press Enter to start the conversation")
 global response
