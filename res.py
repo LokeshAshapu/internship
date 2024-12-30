@@ -166,8 +166,7 @@ if user_input:
 timestamp = datetime.now().strftime(f"%Y-%m-%d %H:%M:%S")
 #file.close()
 counter = 0
-def main():
-        
+def main():    
         global counter
 # Create a sidebar menu with options
         menu= ["Home", "Conversation History", "About","Intents used"]
