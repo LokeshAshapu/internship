@@ -166,7 +166,8 @@ if user_input:
 timestamp = datetime.now().strftime(f"%Y-%m-%d %H:%M:%S")
 #file.close()
 counter = 0
-def main():    
+def main():
+        
         global counter
 # Create a sidebar menu with options
         menu= ["Home", "Conversation History", "About","Intents used"]
@@ -183,7 +184,7 @@ def main():
                                 # Save the user input and chatbot response to the chat_log.csv file
                         with open('chat_log.csv', 'a', newline='', encoding='utf-8') as csvfile:
                                 csv_writer = csv.writer(csvfile)
-                                csv_writer.writerow([user_input, response, timestamp])
+                                csv_writer.writerow([user_input, 'response', timestamp])
                         if response.lower() in ['goodbye', 'bye']:
                                 st.write("Thank you for chatting with me. Have a great day!")
                                 st.stop()
@@ -204,11 +205,19 @@ def main():
                         st.markdown ("-")
         elif choice == "About":
                 st.write("The goal of this project is to create a chatbot that can understand and respond to a conversation")
+                st.subheader("Problem Statement:")
+                st.write("""The aim is to craft an advanced Restaurants Chatbot designed for a 5-star guest experience. This virtual assistant will handle orders,
+table reservations, special offers, discounts and general inquiries. Using Natural Language Processing (NLP), it will understand guest questions and provide accurate,
+conversational responses. The chatbot ensures seamless interaction, enhancing convenience and luxury. It’s a step toward redefining hospitality with intelligent automation.""")
+                st.subheader("Problem Solution:")
+                st.write("""Restaurants face the challenge of managing guest requests 24/7 without overwhelming staff. A chatbot streamlines this by automating responses to common inquiries,
+improving efficiency. This enhances the guest experience while lightening the operational load, and which can leads the restaurant growth.""")
                 st.subheader ("Project Overview:")
                 st.write("""
-The project is divided into two parts:
-1. NLP techniques and Logistic Regression algorithm is used to train the chatbot on la
-2. For building the Chatbot interface, Streamlit web framework is used to build a web-
+the key requirements for implementing a chatbot using NLP in 3 lines:
+1.	Strong NLP foundation: Accurate intent recognition, entity extraction, and fluent NLG.
+2.	High-quality data: Ample, diverse, and well-annotated data for training.
+3.	User-centric design: Prioritize user experience, accessibility, and continuous improvement.
 """)
 
                 st.subheader("Dataset:")
