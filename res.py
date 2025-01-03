@@ -4,7 +4,7 @@ from PIL import Image
 import csv
 import pandas as pd
 import numpy as np
-import nltk
+#import nltk
 import ssl
 import random
 from datetime import datetime
