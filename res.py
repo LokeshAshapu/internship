@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
+nltk.download('stopwords')
 # Open a file to read from it
 #this is not possible in my system
 #with open('res.json', 'r') as file:
