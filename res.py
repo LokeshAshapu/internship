@@ -154,6 +154,7 @@ st.write("Welcome to the chatbot. Please type a message and press Enter to start
 global response
 global user_input
 global timestamp
+counter = 0
 user_input = st.text_input("You: ")
 if user_input:
         # Convert input to vector and predict tag
@@ -163,7 +164,8 @@ if user_input:
         for intent in intents:
                 if intent['tag'] == predicted_tag:
                         response = random.choice(intent['responses'])
-        st.write(f"Bot: {response}")
+        #st.write(f"Bot: {response}")
+        st.text_area("Chatbot:", value=response, height=120, max_chars=None, key=f"chatbot_response_{counter}")
 timestamp = datetime.now().strftime(f"%Y-%m-%d %H:%M:%S")
 #file.close()
 counter = 0
