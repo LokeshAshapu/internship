@@ -172,6 +172,7 @@ counter = 0
 def main():
         
         global counter
+        global response
 # Create a sidebar menu with options
         menu= ["Home", "Conversation History", "About","Intents used"]
         choice = st.sidebar.selectbox ("Menu", menu)
@@ -187,7 +188,7 @@ def main():
                                 # Save the user input and chatbot response to the chat_log.csv file
                         with open('chat_log.csv', 'a', newline='', encoding='utf-8') as csvfile:
                                 csv_writer = csv.writer(csvfile)
-                                csv_writer.writerow([user_input, 'response', timestamp])
+                                csv_writer.writerow([user_input, response, timestamp])
                         if response.lower() in ['goodbye', 'bye']:
                                 st.write("Thank you for chatting with me. Have a great day!")
                                 st.stop()
